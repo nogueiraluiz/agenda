@@ -2,17 +2,19 @@ package com.luiznogueira.view;
 
 import javax.swing.JFrame;
 
-public class TelaPrincipal extends JFrame {
+public class JanelaPrincipal extends JFrame {
 
-    public TelaPrincipal() {
+    public JanelaPrincipal() {
         super("Agenda");
         setSize(900, 600);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
+        add(new PainelListaContatos());
     }
 
     public static void main(String[] args) {
-        new TelaPrincipal();
+        new JanelaPrincipal();
     }
 
 }
