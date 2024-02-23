@@ -1,6 +1,6 @@
 package com.luiznogueira.model;
 
-public class Contato {
+public class Contato implements Comparable<Contato> {
     
     private String nome;
     private String email;
@@ -27,6 +27,13 @@ public class Contato {
         this.telefone.ddd = ddd;
         this.aniversario = new MesAno(dia, mes);
     }
+
+    @Override
+    public int compareTo(Contato contato) {
+        return this.nome.compareTo(contato.nome);
+    }
+
+    // TODO: Implementar equals
 
     @Override
     public String toString() {
