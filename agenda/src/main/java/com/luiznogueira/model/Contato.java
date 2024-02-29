@@ -28,12 +28,18 @@ public class Contato implements Comparable<Contato> {
         this.aniversario = new MesAno(dia, mes);
     }
 
+    public Contato(String nome, String email, String numero, int dia, int mes) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = new Telefone();
+        this.telefone.numero = numero;
+        this.aniversario = new MesAno(dia, mes);
+    }
+
     @Override
     public int compareTo(Contato contato) {
         return this.nome.compareTo(contato.nome);
     }
-
-    // TODO: Implementar equals
 
     @Override
     public String toString() {
