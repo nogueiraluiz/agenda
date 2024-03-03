@@ -4,10 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.DefaultListCellRenderer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import com.luiznogueira.model.Contato;
@@ -38,7 +36,7 @@ public class Tela {
         lista.add(new Contato("João", "joao@abc.com", "12346", 2, 2));
         lista.add(new Contato("Joana", "joana@abc.com", "12347", 3, 3));
         lista.add(new Contato("Julia", "julia@abc.com", "12348", 4, 4));
-        lista.add(new Contato("José", "abc@abc.com", "12345", 1, 1));
+        lista.add(new Contato("José", "abc@abc.com", "12345", 5, 5));
         return lista.toArray(new Contato[0]);
     }
 
