@@ -10,7 +10,6 @@ import com.google.gson.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.io.IOException;
 import java.nio.file.*;
 
@@ -22,29 +21,29 @@ public class JSONParser {
     public List<String> contatosToJSON(Collection<Contato> contatos) {
         List<String> json = new ArrayList<>();
         for (Contato contato : contatos) {
-            json.add(contatoToJSON(contato));
+            json.add(contatoToJson(contato));
         }
         return json;
     }
 
-    public List<Contato> JSONToContatos(Collection<String> jsons) {
+    public List<Contato> jsonToContatos(Collection<String> jsons) {
         List<Contato> contatos = new ArrayList<>();
         for (String json : jsons) {
-            contatos.add(JSONToContato(json));
+            contatos.add(jsonToContato(json));
         }
         return contatos;
     }
 
-    private String contatoToJSON(Contato contato) {
+    private String contatoToJson(Contato contato) {
         return gson.toJson(contato);
     }
 
-    private Contato JSONToContato(String json) {
+    private Contato jsonToContato(String json) {
         return gson.fromJson(json, Contato.class);
     }
     
     public static void main(String[] args) {
-        List<Contato> contatos = Arrays.asList(Tela.getListaContatosStub());
+        List<Contato> contatos = Tela.getListaContatosStub();
         JSONParser parser = new JSONParser();
         List<String> jsons = parser.contatosToJSON(contatos);
         log.debug(jsons.toString());
