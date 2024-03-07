@@ -33,7 +33,7 @@ public class Tela {
         frame.setVisible(true); // TODO deixar por último
     }
     
-    private static Contato[] getListaContatosStub() {
+    public static Contato[] getListaContatosStub() {
         List<Contato> lista = new ArrayList<>();
         lista.add(new Contato("José", "jose@abc.com", "12345", 1, 1));
         lista.add(new Contato("João", "joao@abc.com", "12346", 2, 2));
