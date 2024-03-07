@@ -2,21 +2,19 @@ package com.luiznogueira.view;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
-import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
 
 import com.luiznogueira.entidades.Contato;
 
 import javax.swing.JLabel;
-import javax.swing.DefaultListCellRenderer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import lombok.extern.slf4j.Slf4j;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
-
 
 @Slf4j
 public class Tela {
@@ -26,7 +24,7 @@ public class Tela {
         frame.setSize(450, 450);
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setResizable(false);
-        JPanel panel = new JPanel();
+        JScrollPane panel = new JScrollPane();
         JLabel titulo = new JLabel("Contatos");
         panel.add(titulo);
         renderizaListaContatos(frame, panel);
@@ -43,8 +41,9 @@ public class Tela {
         return lista.toArray(new Contato[0]);
     }
 
-    private static void renderizaListaContatos(JFrame frame, JPanel panel) {
+    private static void renderizaListaContatos(JFrame frame, JScrollPane panel) {
         JList<Contato> lista = new JList<>(getListaContatosStub());
+        lista.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         panel.add(lista);
         frame.add(panel);
     }
